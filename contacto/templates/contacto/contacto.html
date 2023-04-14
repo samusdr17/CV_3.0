@@ -1,0 +1,21 @@
+{% extends 'CV_three_ZeroApp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="cntct_div myFlex flex_column">
+
+    {% if "valido" in request.GET %}
+    <h3 class="pro cntct_message">
+        ¡MUCHAS GRACIAS! Petición recibida, en breve me pondré en contacto contigo.
+    </h3>
+    {% endif %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table class="cntct_table">
+            {{miFormulario.as_table}}
+        </table>
+        <input type="submit" value="Enviar" class="cntct_btn_input">
+    </form>
+</div>
+
+{% endblock %}
